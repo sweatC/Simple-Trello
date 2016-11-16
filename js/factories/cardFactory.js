@@ -22,5 +22,13 @@ angular.module('app').factory('cardFactory', function() {
 		return _.filter(cards, { list_id: list.id });
 	};
 
+	service.createCard = function(list, cardDesc) {
+		cards.push({
+			id: _.uniqueId('card_'),
+			description: cardDesc,
+			list_id: list.id
+		});
+	};
+
 	return service;
 });
