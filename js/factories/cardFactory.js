@@ -19,7 +19,7 @@ angular.module('app').factory('cardFactory', function() {
 	];
 
 	service.getCards = function(list) {
-		return _.filter(cards, { list_id: list.id });
+		return _.filter(cards, { list_id: list.id }); 
 	};
 
 	service.createCard = function(list, cardDesc) {
@@ -28,6 +28,10 @@ angular.module('app').factory('cardFactory', function() {
 			description: cardDesc,
 			list_id: list.id
 		});
+	};
+
+	service.deleteCard = function(card) {
+		_.pull(cards, card);
 	};
 
 	return service;
