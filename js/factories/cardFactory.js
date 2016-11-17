@@ -34,5 +34,9 @@ angular.module('app').factory('cardFactory', function() {
 		_.pull(cards, card);
 	};
 
+	service.updateCard = function(newCard) {
+		var card = _.findWhere(cards, { id: newCard.id });
+		card.description = newCard.description;
+	};
 	return service;
 });
