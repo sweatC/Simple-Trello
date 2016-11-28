@@ -39,6 +39,8 @@
                   <form ng-submit="cardCtrl.updateCard()">
                     <input type="text" ng-model="cardCtrl.cardEdit.description">
                     <select class="select-list"
+                    close-editing
+                    is-editing = "cardCtrl.isEditing"
                     ng-model="cardCtrl.cardEdit.list_id"
                     ng-change="cardCtrl.updateCard()"
                     ng-options="list.id as list.listName for list in listsCtrl.lists">
@@ -75,5 +77,6 @@
   <script src="js/controllers/listsCtrl.js"></script>
   <script src="js/controllers/listCtrl.js"></script>
   <script src="js/controllers/cardCtrl.js"></script>
+  <script src="js/directives/editDerective.js"></script>
 </body>
 </html>
