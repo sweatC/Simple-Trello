@@ -12,7 +12,7 @@ angular.module('app').controller('cardCtrl', function(cardFactory) {
 		this.cardEdit = angular.copy(card);
 	};
 
-	this.updateCard = function(card) {
+	this.updateCard = function() {
 		cardFactory.updateCard(this.cardEdit);
 		// close editing
 		this.isEditing = false;
